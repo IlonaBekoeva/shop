@@ -63,27 +63,27 @@ on p.id = oi.product_id</br>
 </br>
 where o.id = 5;</br>
 </br>
-………запрос №2 …………………………………………………………………………………………………………………….
-INSERT INTO shop.orders (FIO, address, courier_id) VALUES ('Яна', 'Гугкаева', '3');
-INSERT INTO shop.order_items (product_id, order_id, amount) VALUES ('2', '3', '5');
-INSERT INTO shop.order_items (product_id, order_id, amount) VALUES ('3', '1', '2');
-
-………запрос №3 …………………………………………………………………………………………………………………….
-SELECT  x.FIO, x.address, p.name, oi.amount, p.price*oi.amount as Sum, c.name 
-FROM shop.orders as x
-
-join shop.couriers as c
-on x.courier_id = c.id
-
-join shop.order_items as oi
-on x.id = oi.order_id
-
-join shop.products as p
-on p.id = oi.product_id
-
-where x.courier_id = 1
-
-………запрос №4 …………………………………………………………………………………………………………………….
-UPDATE shop.order_items 
-SET amount = '3' 
-WHERE (id = '1');
+………запрос №2 …………………………………………………………………………………………………………………….</br>
+INSERT INTO shop.orders (FIO, address, courier_id) VALUES ('Яна', 'Гугкаева', '3');</br>
+INSERT INTO shop.order_items (product_id, order_id, amount) VALUES ('2', '3', '5');</br>
+INSERT INTO shop.order_items (product_id, order_id, amount) VALUES ('3', '1', '2');</br>
+</br>
+………запрос №3 …………………………………………………………………………………………………………………….</br>
+SELECT  x.FIO, x.address, p.name, oi.amount, p.price*oi.amount as Sum, c.name </br>
+FROM shop.orders as x</br>
+</br>
+join shop.couriers as c</br>
+on x.courier_id = c.id</br>
+</br>
+join shop.order_items as oi</br>
+on x.id = oi.order_id</br>
+</br>
+join shop.products as p</br>
+on p.id = oi.product_id</br>
+</br>
+where x.courier_id = 1</br>
+</br>
+………запрос №4 …………………………………………………………………………………………………………………….</br>
+UPDATE shop.order_items </br>
+SET amount = '3' </br>
+WHERE (id = '1');</br>
